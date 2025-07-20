@@ -21,6 +21,12 @@ app.use(cors({
  credentials:true
 }))
 
+app.use(cors({
+  origin: "https://onecart-theta.vercel.app", // your frontend domain
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+}));
+
 app.use("/api/auth",authRoutes)
 app.use("/api/user",userRoutes)
 app.use("/api/product",productRoutes)
